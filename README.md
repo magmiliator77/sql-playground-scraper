@@ -59,5 +59,5 @@ Si clonas este repositorio en tu ordenador para ejecutarlo por ti mismo:
 3. `node server.js`
 4. Abre `http://localhost:3000` en tu navegador.
 
-En local, puedes ir a `scraper.js` y cambiar `headless: headless` por `headless: false`. ¡Si lo haces, verás cómo se abre Chrome y un robot "fantasma" empieza a hacer clics por ti volando a toda velocidad! 👻🖱️
+En local, puedes ir a `scraper.js` y cambiar `headless: headless` por `headless: false`. Si lo haces, verás cómo se abre Chrome y empieza a navegar por los ejercicios copiando los enunciados de cada uno.
 </details>
