@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Playground Scraper 🚀</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dynamic background elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <div class="container">
+        <header class="glass-panel">
+            <h1>SQL Playground Scraper 🚀</h1>
+            <p>Extrae todos los ejercicios automáticamente en formato Markdown.</p>
+        </header>
+
+        <main>
+            <section class="config-panel glass-panel">
+                <h2>Configuración</h2>
+                <form id="scraperForm">
+                    <div class="input-group">
+                        <label for="dbName">Base de Datos</label>
+                        <input type="text" id="dbName" required placeholder="Ej. Jardinería" value="Jardinería">
+                    </div>
+                    <div class="input-group">
+                        <label for="sectionName">Sección</label>
+                        <input type="text" id="sectionName" required placeholder="Ej. Consultas resumen" value="Consultas resumen">
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="showBrowser" name="showBrowser">
+                        <label for="showBrowser">Ver extracción en vivo (No ocultar navegador)</label>
+                    </div>
+
+                    <button type="submit" id="startBtn" class="btn primary-btn">
+                        <span>Iniciar Extracción</span>
+                        <div class="loader-spinner" style="display: none;"></div>
+                    </button>
+                </form>
+            </section>
+
+            <section class="terminal-panel glass-panel">
+                <div class="terminal-header">
+                    <div class="dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-title">Proceso de Extracción</span>
+                </div>
+                <div id="terminal" class="terminal-window">
+                    <div class="log-line text-muted">A la espera de iniciar...</div>
+                </div>
+                <div id="actions" class="actions-container" style="display: none;">
+                    <a id="downloadBtn" href="#" class="btn success-btn" download>Descargar Markdown</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
