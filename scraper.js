@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs/promises');
 
-async function scrapeExercises({ databaseName, sectionName, onProgress }) {
+async function scrapeExercises({ databaseName, sectionName, onProgress, headless = true }) {
   const log = (msg) => {
     console.log(msg);
     if (onProgress) onProgress(msg);
@@ -9,7 +9,16 @@ async function scrapeExercises({ databaseName, sectionName, onProgress }) {
 
   log(`Starting scraper for DB: '${databaseName}', Section: '${sectionName}'`);
   // Using headful mode so you can see the magic happen!
-  const browser = await puppeteer.launch({ headless: false, defaultViewport: null }); 
+  const browser = await puppeteer.launch({ 
+    headless: headless, 
+    defaultViewport: null,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--single-process'
+    ]
+  }); 
   const page = await browser.newPage();
   
   await page.goto('https://sql-playground.com/', { waitUntil: 'networkidle2' });
