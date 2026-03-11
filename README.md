@@ -17,7 +17,7 @@ Para evitar que el usuario se quede esperando frente a una pantalla de carga est
 Esto permite al servidor enviar de vuelta mensajes y "logs" *"en tiempo real"* a la web (Ej: *"Entrando en la sección..."*, *"Extrayendo Ejercicio 2..."*).
 
 ### 2. El Motor de Extracción o "Scraper" (`scraper.js` / Puppeteer)
-Aquí ocurre la *magia negra* real. Cuando el servidor recibe la petición, invoca a **Puppeteer**. 
+Aquí ocurre lo verdaderamente interesante. Cuando el servidor recibe la petición, invoca a **Puppeteer**. 
 Puppeteer es una librería que permite controlar un navegador web real (Google Chrome/Chromium) mediante código en vez de clics humanos.
 
 Este es el proceso exacto que sigue la máquina por detrás:
